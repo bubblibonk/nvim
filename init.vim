@@ -18,7 +18,10 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'sheerun/vim-polyglot'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'https://github.com/jiangmiao/auto-pairs'
-
+Plug 'https://github.com/preservim/tagbar'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'maralla/completor.vim', { 'do': 'make js' }
+Plug 'maralla/completor-typescript'
 
 call plug#end()
 nmap <C-n> :NERDTreeToggle<CR>
@@ -29,5 +32,10 @@ set termguicolors
 
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
+let g:completor_auto_triggedr = 0
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 colorscheme tokyonight
